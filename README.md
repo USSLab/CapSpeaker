@@ -52,14 +52,15 @@ Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y  
 # Citation
 
 ```
-@INPROCEEDINGS {
-    author = {X. Ji and Y. Cheng and Y. Zhang and K. Wang and C. Yan and W. Xu and K. Fu},
-    booktitle = {2021 2021 IEEE Symposium on Security and Privacy (SP)},
-    title = {Poltergeist: Acoustic Adversarial Machine Learning against Cameras and Computer Vision},
-    year = {2021},
-    publisher = {IEEE Computer Society},
-    address = {Los Alamitos, CA, USA},
-    month = {may}
+@inproceedings{CapSpeaker_CCS21,
+  author    = {Xiaoyu Ji and
+               Juchuan Zhang and
+               Shui Jiang and
+               Jishen Li and
+               Wenyuan Xu},
+  title     = {{CapSpeaker}: Injecting Voices to Microphones via Capacitors},
+  booktitle = {Proceedings of the 2021 {ACM} {SIGSAC} Conference on Computer and Communications Security {(CCS '21)},  November 15–19, 2021, Virtual Event, Republic of Korea},
+  doi       = {10.1145/3460120.3485389}
 }
 ```
 
