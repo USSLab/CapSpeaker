@@ -24,7 +24,7 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
 
 # Evaluation of CapSpeaker
 We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker.
-* **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
+* **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power. 
 * **Performance on commercial lamp:**
 
 # Contact
