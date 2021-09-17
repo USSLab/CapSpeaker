@@ -2,16 +2,9 @@
 Capacitors are ubiquitous and indispensable components in electronic devices since they are used for voltage stabilization, filtering, etc. Particularly, Multi-layer Ceramic (MLC) capacitors are dominant due to their high energy density and low cost. we investigate the feasibility of utilizing commodity electronic devices with built-in capacitors to inject malicious voice commands into voice assistants, such as Apple Siri, Xiaomi Art Speaker. Unlike existing work that injects malicious voice commands into voice assistants via a loudspeaker, we propose CapSpeaker that can inject voice commands by converting an electronic device (e.g., a lamp) that are not designed to produce voice into a speaker. 
 
 # System workflow of CapSpeaker
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./images/attack.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
+<p align="center" width="100%">
+    <img width="90%" src="./images/attack.png">
+</p>
 CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulates the baseband signal with voice commands onto the carrier. Then, CapSpeaker manipulates the GPIO pin using high-level programming instructions to generate the PWM-modulated signal, which drives the capacitors to produce the desired inaudible voice commands. Finally, the produced voice commands can be received and demodulated by the victim’s voice assistant, which executes the command.
 
 # How does CapSpeaker Work?
@@ -23,18 +16,22 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
   * **GPIO controlling module:** To run the malware of CapSpeaker on the victim device, we exploit the off-the-shelf hardware PWM API on MCUs, which is usually implemented and controlled by a timer. Suppose the period of the PWM waveform is T, and the duty cycle is D. Then the PWM waveform with parameters T, D is achieved by setting the GPIO output to 1 during the active state and vice versa. The MCU in our setup is ESP-WROOM-32D, which cannot support real-time fine-grained (i.e., 32 kHz) PWM calculation. Therefore, to strike the balance between accuracy and implementation, we increase the duty cycle to every two PWM periods to decrease the calculation overhead. Suppose that the duty cycle trace of the malicious voice command is Duty\[0\], Duty\[1\], Duty\[2\], ..., we select Duty\[0\], Duty\[2\], Duty\[4\], ... to set the PWM duty value.
 
 # Evaluation of CapSpeaker
-We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker.
+We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker. The demo video can be found at [CapSpeaker Demo](https://sites.google.com/view/capspeaker).
 * **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
-<center>
-    <img style="border-radius: 0.3em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./images/selfimplement.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 1px;"></div>
-</center>
+<p align="center" width="100%">
+    <img width="50%" src="./images/selfimplement.png">
+</p>
+Performance of self-designed lamp can be seen as follows.
+
+Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Freq. (kHz)|Max. Dist. (cm)
+----------|------------ |------------|---------|------------|---------------|-----------|-----------|---------------
+Smartphone|Apple        | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y          | 32        |10.5
+Smartphone|Huawei       | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y          | 33        |9
+Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y          | 24        |3.5
+Smartphone|Redmi        | K30 Ultra  | 2020.08 |MIUI 12.0.18| iFlytek       |Y          | 28        |0.5
+Smartphone|Apple        | iWatch S1  | 2015.04 | watchOS 3.1| Siri          |Y          | 22.3      |0.2
+
+
 * **Performance on commercial lamp:**
 
 # Contact
