@@ -22,6 +22,10 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
     * **PWM-based modulation:** Normally, IoT devices are unable to output signals of fine-grained amplitudes. Instead, GPIO can only output two levels, i.e., a “low” level or a “high” level, which are often 0 V and 5 V for commercial smart devices. Therefore, we resort to the pulse-width modulation (PWM) scheme which only needs two levels of output voltage.
   * **GPIO controlling module:** To run the malware of CapSpeaker on the victim device, we exploit the off-the-shelf hardware PWM API on MCUs, which is usually implemented and controlled by a timer. Suppose the period of the PWM waveform is T, and the duty cycle is D. Then the PWM waveform with parameters T, D is achieved by setting the GPIO output to 1 during the active state and vice versa. The MCU in our setup is ESP-WROOM-32D, which cannot support real-time fine-grained (i.e., 32 kHz) PWM calculation. Therefore, to strike the balance between accuracy and implementation, we increase the duty cycle to every two PWM periods to decrease the calculation overhead. Suppose that the duty cycle trace of the malicious voice command is Duty\[0\], Duty\[1\], Duty\[2\], ..., we select Duty\[0\], Duty\[2\], Duty\[4\], ... to set the PWM duty value.
 
+# Evaluation of CapSpeaker
+We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker.
+* **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
+* **Performance on commercial lamp:**
 
 # Contact
 * Prof. Wenyuan Xu (<wyxu@zju.edu.cn>)
