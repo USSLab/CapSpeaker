@@ -48,7 +48,7 @@ Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y  
 # Contact
 * Prof. Wenyuan Xu (<wyxu@zju.edu.cn>)
 * Prof. Xiaoyu Ji (<xji@zju.edu.cn>)
-* Mr. Juchuan Zhang(<juchuanzhang@zju.edu.cn>)
+* Mr. Juchuan Zhang (<juchuanzhang@zju.edu.cn>)
 
 # Citation
 
