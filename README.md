@@ -16,14 +16,14 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
   * **GPIO controlling module:** To run the malware of CapSpeaker on the victim device, we exploit the off-the-shelf hardware PWM API on MCUs, which is usually implemented and controlled by a timer. Suppose the period of the PWM waveform is T, and the duty cycle is D. Then the PWM waveform with parameters T, D is achieved by setting the GPIO output to 1 during the active state and vice versa. The MCU in our setup is ESP-WROOM-32D, which cannot support real-time fine-grained (i.e., 32 kHz) PWM calculation. Therefore, to strike the balance between accuracy and implementation, we increase the duty cycle to every two PWM periods to decrease the calculation overhead. Suppose that the duty cycle trace of the malicious voice command is Duty\[0\], Duty\[1\], Duty\[2\], ..., we select Duty\[0\], Duty\[2\], Duty\[4\], ... to set the PWM duty value.
 
 # Evaluation of CapSpeaker
-We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker. The demo video can be found at [CapSpeaker Demo](https://sites.google.com/view/capspeaker).
+We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker. The demo video can be found at [CapSpeaker Demo Link](https://sites.google.com/view/capspeaker).
 * **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
 <p align="center" width="100%">
     <img width="50%" src="./images/selfimplement.png">
 </p>
-Performance of self-designed lamp can be seen as follows.
+Performance of CapSpeaker on self-designed lamp can be seen as follows.
 
-Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Freq. (kHz)|Max. Dist. (cm)
+Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Carrier Freq. (kHz)|Max. Dist. (cm)
 ----------|------------ |------------|---------|------------|---------------|-----------|-----------|---------------
 Smartphone|Apple        | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y          | 32        |10.5
 Smartphone|Huawei       | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y          | 33        |9
@@ -32,11 +32,36 @@ Smartphone|Redmi        | K30 Ultra  | 2020.08 |MIUI 12.0.18| iFlytek       |Y  
 Smartphone|Apple        | iWatch S1  | 2015.04 | watchOS 3.1| Siri          |Y          | 22.3      |0.2
 
 
-* **Performance on commercial lamp:**
+* **Performance on commercial lamp:** In addition to the self-implemented LED prototype, we validated the feasibility of CapSpeaker against a commercial LED lamp. The
+commercial product is a Xiaomi 1S Lamp. To ease the burden of reverse engineering the firmware, we directly replace its MCU board with one of the same models (ESP-WROOM-32D), and implant the malware inside the new MCU board in advance.
+<p align="center" width="100%">
+    <img width="50%" src="./images/comercial.png">
+</p>
+Performance of CapSpeaker on commercial lamp can be seen as follows.
+
+Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Carrier Freq. (kHz)|Max. Dist. (cm)
+----------|------------ |------------|---------|------------|---------------|-----------|-----------|---------------
+Smartphone|Apple        | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y          | 32        |3.2
+Smartphone|Huawei       | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y          | 33        |2.9
+Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y          | 24        |0.5
 
 # Contact
 * Prof. Wenyuan Xu (<wyxu@zju.edu.cn>)
 * Prof. Xiaoyu Ji (<xji@zju.edu.cn>)
+
+# Citation
+
+```
+@INPROCEEDINGS {
+    author = {X. Ji and Y. Cheng and Y. Zhang and K. Wang and C. Yan and W. Xu and K. Fu},
+    booktitle = {2021 2021 IEEE Symposium on Security and Privacy (SP)},
+    title = {Poltergeist: Acoustic Adversarial Machine Learning against Cameras and Computer Vision},
+    year = {2021},
+    publisher = {IEEE Computer Society},
+    address = {Los Alamitos, CA, USA},
+    month = {may}
+}
+```
 
 # Powered by
 
