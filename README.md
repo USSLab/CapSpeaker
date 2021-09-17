@@ -1,3 +1,2 @@
-# CapSpeaker
-
-hello world!
+# What is CapSpeaker
+Capacitors are ubiquitous and indispensable components in electronic devices since they are used for voltage stabilization, filtering, etc. Particularly, Multi-layer Ceramic (MLC) capacitors are dominant due to their high energy density and low cost. we investigate the feasibility of utilizing commodity electronic devices with built-in capacitors to inject malicious voice commands into voice assistants, such as Apple Siri, Xiaomi Art Speaker. Unlike existing work that injects malicious voice commands into voice assistants via a loudspeaker, we propose CapSpeaker that can inject voice commands by converting an electronic device (e.g., a lamp) that are not designed to produce voice into a speaker. 
