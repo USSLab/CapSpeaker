@@ -7,5 +7,45 @@ Capacitors are ubiquitous and indispensable components in electronic devices sin
   * **Signal crafting module:** The signal crafting module addresses two issues: 1) Selecting a proper carrier frequency for modulation to make the attack signal inaudible yet match the frequency response of the capacitors. 2) Utilizing a feasible modulation scheme to modulate the voice command onto the selected carrier frequency, considering the limitation of device hardware and software.
     * **Carrier frequency:** 1) In order to achieve the best **frequency response of the MLC capacitor**, the choice of a carrier frequency should be above 20 kHz and below 80 kHz, according to our experimentation. 2) To fully exploit the **nonlinearity** of the victim voice assistant's microphone, we consider the frequency bands of [2 kHz,20 kHz], or [27 kHz,38 kHz]. 3) To make our attack **inaudible**, the carrier frequency should be above 20kHz.
     * **PWM-based modulation:** Normally, IoT devices are unable to output signals of fine-grained amplitudes. Instead, GPIO can only output two levels, i.e., a “low” level or a “high” level, which are often 0 V and 5 V for commercial smart devices. Therefore, we resort to the pulse-width modulation (PWM) scheme which only needs two levels of output voltage.
-  * **GPIO controlling module:** To run the malware of CapSpeaker on the victim device, we exploit the off-the-shelf hardware PWM API on MCUs, which is usually implemented and controlled by a timer. Suppose the period of the PWM waveform is T, and the duty cycle is D. Then the PWM waveform with parameters T, D is achieved by setting the GPIO output to 1 during the active state and vice versa. The MCU in our setup is ESP-WROOM-32D, which cannot support real-time fine-grained (i.e., 32 kHz) PWM calculation. Therefore, to strike the balance between accuracy and implementation, we increase the duty cycle to every two PWM periods to decrease the calculation overhead. Suppose that the duty cycle trace of the malicious voice command is 𝐷𝑢𝑡𝑦\[0\], 𝐷𝑢𝑡𝑦\[1\], 𝐷𝑢𝑡𝑦\[2\], ..., we select 𝐷𝑢𝑡𝑦\[0\], 𝐷𝑢𝑡𝑦\[2\], 𝐷𝑢𝑡𝑦\[4\], ... to set the PWM duty value.
+  * **GPIO controlling module:** To run the malware of CapSpeaker on the victim device, we exploit the off-the-shelf hardware PWM API on MCUs, which is usually implemented and controlled by a timer. Suppose the period of the PWM waveform is T, and the duty cycle is D. Then the PWM waveform with parameters T, D is achieved by setting the GPIO output to 1 during the active state and vice versa. The MCU in our setup is ESP-WROOM-32D, which cannot support real-time fine-grained (i.e., 32 kHz) PWM calculation. Therefore, to strike the balance between accuracy and implementation, we increase the duty cycle to every two PWM periods to decrease the calculation overhead. Suppose that the duty cycle trace of the malicious voice command is Duty\[0\], Duty\[1\], Duty\[2\], ..., we select Duty\[0\], Duty\[2\], Duty\[4\], ... to set the PWM duty value.
+# System workflow of CapSpeaker
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./images/attack.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulates the baseband signal with voice commands onto the carrier. Then, CapSpeaker manipulates the GPIO pin using high-level programming instructions to generate the PWM-modulated signal, which drives the capacitors to produce the desired inaudible voice commands. Finally, the produced voice commands can be received and demodulated by the victim’s voice assistant, which executes the command.
 
+# Contact
+* Prof. Wenyuan Xu (<wyxu@zju.edu.cn>)
+* Prof. Xiaoyu Ji (<xji@zju.edu.cn>)
+
+# Powered by
+
+<table bgcolor="white">
+<tr valign="middle">
+<td width="50%" align="center" colspan="2">
+ <a href="http://usslab.org">Ubiquitous System Security Laboratory (USSLab) 
+</td>
+<td width="50%" align="center" colspan="2">
+  <a href="http://www.zju.edu.cn/english">Zhejiang University 
+</td>
+</tr>
+<tr valign="middle">
+<td width="50%" align="center" colspan="2">
+  <a href="http://usslab.org"></a>
+  <a href="http://usslab.org"><img 
+src="./images/usslab_logo.png" height="80"></a>
+</td>
+<td width="50%" align="center" colspan="2">
+  <a href="http://www.zju.edu.cn/english/"></a>
+  <a href="http://www.zju.edu.cn/english/"><img 
+src="./images/zju_logo.png" height="80"></a>
+</td>
+</tr>
+</table>
