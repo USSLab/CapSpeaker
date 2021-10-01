@@ -23,13 +23,13 @@ We utilized a self-implemented LED lamp and a commercial one to validate the per
 </p>
 Performance of CapSpeaker on self-designed lamp can be seen as follows.
 
-Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Carrier Freq. (kHz)|Max. Dist. (cm)
-----------|------------ |------------|---------|------------|---------------|-----------|-----------|---------------
-Smartphone|Apple        | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y          | 32        |10.5
-Smartphone|Huawei       | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y          | 33        |9
-Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y          | 24        |3.5
-Smartphone|Redmi        | K30 Ultra  | 2020.08 |MIUI 12.0.18| iFlytek       |Y          | 28        |0.5
-Smartphone|Apple        | iWatch S1  | 2015.04 | watchOS 3.1| Siri          |Y          | 22.3      |0.2
+Type      |Manuf. | Model      |Rel. Date| OS/Version |Voice Assistant|Recog.|Carrier Freq. (kHz)|Max. Dist. (cm)
+----------|-------|------------|---------|------------|---------------|------|-----------|---------------
+Smartphone|Apple  | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y     | 32        |10.5
+Smartphone|Huawei | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y     | 33        |9
+Tablet    |Apple  | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y     | 24        |3.5
+Smartphone|Redmi  | K30 Ultra  | 2020.08 |MIUI 12.0.18| iFlytek       |Y     | 28        |0.5
+Smartphone|Apple  | iWatch S1  | 2015.04 | watchOS 3.1| Siri          |Y     | 22.3      |0.2
 
 
 * **Performance on commercial lamp:** In addition to the self-implemented LED prototype, we validated the feasibility of CapSpeaker against a commercial LED lamp. The
@@ -39,11 +39,11 @@ commercial product is a Xiaomi 1S Lamp. To ease the burden of reverse engineerin
 </p>
 Performance of CapSpeaker on commercial lamp can be seen as follows.
 
-Type      |Manufacturer | Model      |Rel. Date| OS/Version |Voice Assistant|Recognition|Carrier Freq. (kHz)|Max. Dist. (cm)
-----------|------------ |------------|---------|------------|---------------|-----------|-----------|---------------
-Smartphone|Apple        | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y          | 32        |3.2
-Smartphone|Huawei       | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y          | 33        |2.9
-Tablet    |Apple        | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y          | 24        |0.5
+Type      |Manuf. | Model      |Rel. Date| OS/Version |Voice Assistant|Recog.|Carrier Freq. (kHz)|Max. Dist. (cm)
+----------|-------|------------|---------|------------|---------------|------|-----------|---------------
+Smartphone|Apple  | iPhone 4s  | 2011.10 | iOS 9.3.5  | Siri          |Y     | 32        |3.2
+Smartphone|Huawei | Nova 5i Pro| 2019.07 | EMUI 10.1.0| Xiaoyi        |Y     | 33        |2.9
+Tablet    |Apple  | iPad mini 5| 2019.03 | iOS 13.5.1 | Siri          |Y     | 24        |0.5
 
 # Contact
 * Prof. Wenyuan Xu (<wyxu@zju.edu.cn>)
