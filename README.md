@@ -18,16 +18,12 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
 # Evaluation of CapSpeaker
 We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker. The demo video can be found at [CapSpeaker Demo Link](https://sites.google.com/view/capspeaker).
 * **Dataset** 
-<audio id="audio" controls="" preload="none">
-<source id="mp3" src="https://github.com/USSLab/CapSpeaker/blob/main/voice_command/open-the-door-George.mp3">
-</audio>
-<audio id="audio" controls="" preload="none">
-<source id="mp3" src="https://github.com/USSLab/CapSpeaker/blob/main/voice_command/call-my-wife-George.mp3">
-</audio>
-</audio>
-<audio id="audio" controls="" preload="none">
-<source id="mp3" src="https://github.com/USSLab/CapSpeaker/blob/main/voice_command/turn-on-airplane-mode-John.mp3">
-</audio>
+
+[Open the door](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/open-the-door-George.mp3)
+
+[Call my wife](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/call-my-wife-George.mp3)
+
+[Turn on airplane mode](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/turn-on-airplane-mode-John.mp3)
 
 * **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
 <p align="center" width="100%">
