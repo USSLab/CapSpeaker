@@ -21,9 +21,15 @@ We utilized a self-implemented LED lamp and a commercial one to validate the per
 
 [Open the door](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/open-the-door-George.mp3)
 
+[Open the door (Chinese)](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/open-the-door-chinese.aac)
+
 [Call my wife](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/call-my-wife-George.mp3)
 
+[Call my wife (Chinese)](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/call-my-wife-chinese-2s.wav)
+
 [Turn on airplane mode](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/turn-on-airplane-mode-John.mp3)
+
+[Turn on airplane mode (Chinese)](https://github.com/USSLab/CapSpeaker/blob/main/voice_command/turn-on-airplane-mode-chinese.aac)
 
 * **Performance on self-designed lamp:** We implemented a prototype of CapSpeaker using a group of LEDs, an LED driver, and an MCU board. We used 11 LEDs in series, and each LED is of 3W power.
 <p align="center" width="100%">
