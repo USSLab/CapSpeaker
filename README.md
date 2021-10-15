@@ -18,9 +18,9 @@ CapSpeaker first selects an appropriate carrier frequency, and then PWM-modulate
 # Evaluation of CapSpeaker
 We utilized a self-implemented LED lamp and a commercial one to validate the performance of CapSpeaker. The full demo video can be found at [CapSpeaker Demo Link](https://sites.google.com/view/capspeaker).
 
-# CapSpeaker Demo on A Commercial Lamp
+* **CapSpeaker Demo on A Commercial Lamp**  
 <p align="center" width="100%">
-    <img width="90%" src="./images/capspeaker_demo.gif">
+    <img width="50%" src="./images/capspeaker_demo.gif">
 </p>
 
 * **Dataset** 
