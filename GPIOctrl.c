@@ -52,7 +52,7 @@ static void IRAM_ATTR ledc_isr_handler(void* arg)
 {
     WRITE_PERI_REG(LEDC_INT_ENA_REG, 0x1);
     WRITE_PERI_REG(LEDC_INT_CLR_REG, 0x1);
-    if (fiveSecCnt <= 5*LEDC_FREQUENCY)
+    if (fiveSecCnt <= 2*LEDC_FREQUENCY)
     {
         num++;
         if (num == (sizeof(dutyArr)/sizeof(dutyArr[0]))*calibFactor+1) {num = 0; return; }
@@ -64,7 +64,7 @@ static void IRAM_ATTR ledc_isr_handler(void* arg)
 
     }
     // redundant last 3 secs, fill in zeros
-    if (fiveSecCnt >= 2*LEDC_FREQUENCY)
+    if (fiveSecCnt >= 5*LEDC_FREQUENCY)
     {
         fiveSecCnt = 0;
     }
